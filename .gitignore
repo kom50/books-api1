@@ -1,0 +1,6 @@
+node_modules
+.env
+
+/src/books-api1.js
+/src/index.js
+/src/style.css

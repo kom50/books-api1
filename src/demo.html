@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // const xhr = new XMLHttpRequest();
+        // let url = 'http://localhost:3000/books-api';
+        // xhr.responseType = 'json';
+        // xhr.open('POST', url);
+
+        // xhr.onload = () => {
+        //     console.log(xhr.response);
+        //     console.log(xhr);
+        // };
+
+        let data = {
+            book_id: 6,
+            title: 'Javascript',
+            author: 'jay kumar',
+            page_no: 312,
+        };
+
+        // xhr.setRequestHeader(
+        //     'Content-Type',
+        //     'application/json;charset=UTF-8'
+        // );
+        // xhr.send(data);
+
+        // console.log(data);
+        const instance = axios.create({
+            baseURL: 'http://localhost:3000/',
+        });
+
+        // post data
+        // instance
+        //     .post('/books-api', data)
+        //     .then((res) => {
+        //         console.log(res);
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     });
+        // get data
+        instance.get('/books-api').then((res) => {
+            console.log(res.data);
+        });
+        // delete
+        // instance
+        //     .delete('/books-api/103')
+        //     .then((res) => {
+        //         console.log('deleted data', res);
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     });
+        // post
+        // instance
+        //     .post('/books-api', {
+        //         book_id: 17,
+        //         title: 'Javascript',
+        //         author: ' kumar',
+        //         page_no: 121,
+        //     })
+        //     .then((res) => {
+        //         console.log('post data', res);
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     });
+        // update
+        // instance
+        //     .put('/books-api/102', data)
+        //     .then((res) => {
+        //         console.log('update data', res);
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     });
+
+        // let res = fetch('http://localhost:3000/books-api', {
+        //     method: 'POST',
+        //     header: {
+        //         Accept: 'application/json',
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: data,
+        // });
+
+        // console.log('response ', res);
+    </script>
+</body>
+
+</html>
