@@ -18,7 +18,7 @@ app.use(express.static(__dirname));
 let db;
 const main = () => {
 	MongoClient.connect(
-		// process.env.MONGODB_URI,
+		process.env.MONGODB_URI,
 		// {
 		// 	auth: { username: 'root', password: '12345' },
 		// },
