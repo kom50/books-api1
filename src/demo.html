@@ -11,15 +11,17 @@
 
 <body>
     <script>
-        // const xhr = new XMLHttpRequest();
-        // let url = 'http://localhost:3000/books-api';
-        // xhr.responseType = 'json';
-        // xhr.open('POST', url);
+        const xhr = new XMLHttpRequest();
+        let url = 'http://localhost:3000/books-api';
+        xhr.responseType = 'json';
+        xhr.open('GET', url);
 
-        // xhr.onload = () => {
-        //     console.log(xhr.response);
-        //     console.log(xhr);
-        // };
+        xhr.onload = () => {
+            console.log(xhr.response);
+            console.log(xhr);
+        };
+
+        xhr.send();
 
         let data = {
             book_id: 6,
@@ -35,9 +37,9 @@
         // xhr.send(data);
 
         // console.log(data);
-        const instance = axios.create({
-            baseURL: 'http://localhost:3000/',
-        });
+        // const instance = axios.create({
+        //     baseURL: 'http://localhost:3000/',
+        // });
 
         // post data
         // instance
@@ -49,9 +51,9 @@
         //         console.log(err);
         //     });
         // get data
-        instance.get('/books-api').then((res) => {
-            console.log(res.data);
-        });
+        // instance.get('/books-api').then((res) => {
+        //     console.log(res.data);
+        // });
         // delete
         // instance
         //     .delete('/books-api/103')

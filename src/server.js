@@ -30,7 +30,7 @@ const main = () => {
 			console.log('Connected to database');
 			db = database.db(process.env.DB_NAME);
 
-			let server = app.listen(process.env.port, () => {
+			let server = app.listen(process.env.PORT || 3000, () => {
 				let port = server.address().port;
 				console.log('Server running at port %d', port);
 			});
