@@ -17,25 +17,19 @@ app.use(express.static(__dirname));
 //
 let db;
 const main = () => {
-	MongoClient.connect(
-		process.env.MONGODB_URI,
-		{
-			auth: { username: 'root', password: '12345' },
-		},
-		(err, database) => {
-			if (err) {
-				console.log(err);
-				process.exit(1);
-			}
-			console.log('Connected to database');
-			db = database.db(process.env.DB_NAME);
-
-			let server = app.listen(process.env.port, () => {
-				let port = server.address().port;
-				console.log('Server running at port %d', port);
-			});
+	MongoClient.connect(process.env.MONGODB_URI, (err, database) => {
+		if (err) {
+			console.log(err);
+			process.exit(1);
 		}
-	);
+		console.log('Connected to database');
+		db = database.db(process.env.DB_NAME);
+
+		let server = app.listen(process.env.PORT || 3000, () => {
+			let port = server.address().port;
+			console.log('Server running at port %d', port);
+		});
+	});
 };
 
 main();
