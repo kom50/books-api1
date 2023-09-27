@@ -18,7 +18,7 @@ app.get("/json", (req, res) => {
 })
 
 // Return current timestamp
-app.get("/current-teme", (req, res) => {
+app.get("/current-time", (req, res) => {
     res.json({
         currentTime: Date.now(),
     })
