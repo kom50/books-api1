@@ -17,6 +17,12 @@ app.get("/json", (req, res) => {
     })
 })
 
+// Return current timestamp
+app.get("/current-teme", (req, res) => {
+    res.json({
+        currentTime: Date.now(),
+    })
+})
 
 app.listen(PORT, () => {
     console.log(`Server running at ${PORT}`)
